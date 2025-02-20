@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import BookmarkList from "./pages/bookmarkList/bookmarkList";
-import App from "./App";  
+import App from "./App";
 
 const router = createBrowserRouter([
   {
