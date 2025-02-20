@@ -1,0 +1,32 @@
+.header-wrapper {
+ position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 374px;
+  height: 56px;
+  z-index: 888;
+  background-color: white;
+}
+
+
+.transparent {
+  background-color: transparent;
+}
+
+.header-icon {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.section-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}

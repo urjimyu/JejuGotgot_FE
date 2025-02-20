@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "map",
+        path: "",
         element: <MapPage />,
       }, 
       {

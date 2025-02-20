@@ -1,4 +1,6 @@
-.bookmark-list-wrap {}
+.bookmark-list-wrap {
+    padding-top: 56px;
+}
 
 .bookmark-btn {
     color: white;

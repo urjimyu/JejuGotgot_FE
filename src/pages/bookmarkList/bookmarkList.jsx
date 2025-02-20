@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'; // 🔹 useNavigate 추가
 import ListBox from '../../components/listBox/ListBox';
 import React from 'react';
 import './bookmarkList.css';
+import Header from '../../components/common/Header';
 
 const mockLocations = [
   {
@@ -43,7 +44,12 @@ const BookmarkList = () => {
     navigate('/reviewCreate', { state: { location } }); // 🔹 해당 장소 데이터를 가지고 이동
   };
 
+const handleClick = () => {
+  navigate('/');
+}
   return (
+<>
+    <Header title={'저장목록'} onClick={handleClick}/>
     <div className="bookmark-list-wrap">
       {mockLocations.map((location) => (
         <ListBox
@@ -63,6 +69,7 @@ const BookmarkList = () => {
         />
       ))}
     </div>
+    </>
   );
 };
 
