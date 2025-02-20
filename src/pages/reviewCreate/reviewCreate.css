@@ -1,0 +1,25 @@
+.review-wrap {
+    padding-top: 20px;
+}
+
+.review-date {
+    color: #0A8672;
+    font-size: 16px;
+}
+
+.review-info {
+    display: flex;
+    padding: 7px 0px;
+    align-items: center;
+}
+
+.review-store-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.review-store-address {
+    color: #A7A7A9;
+    font-size: 14px;
+}

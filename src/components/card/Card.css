@@ -21,6 +21,7 @@
     width: 90%;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .bookmark-wrapper {
@@ -49,4 +50,57 @@
     color: #aaa;
     font-size: 14px;
     border-radius: 10px;
+}
+
+/* 메모 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* 어두운 배경 */
+    z-index: 10;
+}
+
+.memo-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 20;
+}
+
+.tip {
+    font-size: 14px;
+    color: #666;
+}
+
+.memo-info {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.memo-input {
+    width: 80%;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.memo-save-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: #007aff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
