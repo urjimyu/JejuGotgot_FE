@@ -1,8 +1,7 @@
-import {BookMarkList} from '../../components/listBox/ListBox'
-
+import { BookMarkList } from '../../components/listBox/ListBox'
 
 // 메인 LocationList 컴포넌트
-const LocationList = () => {
+const BookmarkList = () => {
   // API로부터 받아올 데이터 구조 예시
   const [locations, setLocations] = React.useState([]);
   
@@ -31,4 +30,4 @@ const LocationList = () => {
   );
 };
 
-export default LocationList;
+export default BookmarkList;

@@ -28,3 +28,5 @@ const ListBox = ({ location }) => {
     </div>
   );
 };
+
+export default ListBox
