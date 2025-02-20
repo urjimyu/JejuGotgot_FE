@@ -2,14 +2,15 @@ import React from 'react';
 import Tag from '../../components/tag/Tag';
 import './Card.css';
 
-const Card = ({ location, isBookmarked, onBookmarkToggle, disableBookmark,children }) => {
+const Card = ({ location = {}, isBookmarked, onBookmarkToggle, disableBookmark,children }) => {
   return (
     <div className='alterPlaceList-swiper-box'>
         <div className="image-author">
-        {location.author} 
+          {location.url ? location.author : "노제로"}
+    
           <Tag 
             className='alterPlaceList-who-review'
-            text={location.authorType} 
+            text={location.authorType ? location.authorType : "주민"} 
             backgroundColor="#FCF1EB" 
             textColor="#B23E04" 
           />
@@ -32,8 +33,17 @@ const Card = ({ location, isBookmarked, onBookmarkToggle, disableBookmark,childr
        {location.url ? (
         <img className="image-placeholder" src={location.url} alt={location.caption} />
       ) : (
-        <div className="image-placeholder">{children}</div>
+        <div className="image-placeholder">
+            <img 
+          src="/imgs/file.png"
+          alt="파일 이미지"
+          onClick={disableBookmark ? null : () => onBookmarkToggle(location.id)} // disableBookmark가 true면 클릭 막음
+          style={{ cursor: disableBookmark ? "default" : "pointer" }} // 비활성화 시 클릭 스타일 변경
+        />
+        </div>
       )}
+
+
        {children}
     </div>
   );
