@@ -36,9 +36,7 @@
 .badge {
     font-size: 12px;
     padding: 2px 8px;
-    background-color: #D5E8E5;
     border-radius: 12px;
-    color: #075E50;
 }
 
 .location-address {
@@ -53,7 +51,7 @@
     margin-top: 20px;
 }
 
-.alterPlaceList_swiper_box {
+.alterPlaceList-swiper-box {
     margin: 20px;
     display: flex;
     justify-content: space-around;
@@ -62,6 +60,10 @@
     background-color: #fff;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     height: 440px;
+}
+
+.alterPlaceList-who-review {
+    padding-left: 5px;
 }
 
 .image-author {
@@ -83,18 +85,17 @@
     color: white;
     padding: 4px 6px;
     border-radius: 4px;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 600;
     margin-right: 4px;
 }
 
 .char {
     display: inline-block;
     background-color: #ECECEC;
-    color: black;
-    padding: 10px 3px;
-    border-radius: 4px;
-    margin-right: 4px;
+    color: rgb(38, 38, 38);
+    padding: 14px 8px;
+    border-radius: 7px;
 }
 
 /* swiper 화살표 */
