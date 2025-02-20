@@ -1,5 +1,5 @@
 import React from 'react';
-import BottomSheetSwipe from './BottomSheetSwipe';
+import BottomSheetSwipe from '../BottomSheetSwipe';
 
 
 const BottomSheetOpened = () => {

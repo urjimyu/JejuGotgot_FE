@@ -62,7 +62,6 @@ const BottomSheetSwipe = () => {
                 <button 
                   className="bookmark-button"
                   onClick={() => toggleBookmark(location.id)}
-                  aria-label={bookmarks[location.id] ? "북마크 제거" : "북마크 추가"}
                 >
                   {bookmarks[location.id] ? (
                     <img src="/assets/save.png" alt="저장 상태 아이콘" className="bookmark-icon filled" />
@@ -73,14 +72,10 @@ const BottomSheetSwipe = () => {
               </div>
               <div className="info-wrapper">
                 <div className="location-info">
-                <span className="distance-info">현재 거리로부터</span>
-                <span className="distance">{location.distance}</span>
+                  <p className="distance-info">현재 거리로부터</p>
+                  <p className="distance">{location.distance}</p>
                 </div>
-                <span className="image-name">{location.title}</span>
-              </div>
-              <div className="additional-info">
-                <p className="description">{location.description}</p>
-                <p className="address">{location.address}</p>
+                <p className="image-name">{location.title}</p>
               </div>
             </SwiperSlide>
           ))}

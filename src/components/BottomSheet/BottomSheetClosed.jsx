@@ -5,7 +5,7 @@ import BottomSheetSwipe from './BottomSheetSwipe'
 const BottomSheetClosed = () => {
   return (
       <div className='sheet-closed-container'>
-            <span>한적하지만 비슷한 명소</span>
+            <span className='closed-title'>한적하지만 비슷한 명소</span>
             <BottomSheetSwipe/>
           </div>
   )

@@ -6,16 +6,14 @@
   left: 0;
   right: 0;
 
+
   width: 375px;
   height: 371px;  
-  background-color: white;
-  border-radius: 20px 20px 0 0;
-  transition: transform 0.3s ease-in-out;
+
   z-index: 1000;
-  
+  border-radius: 20px 20px 0px 0px;
 background: linear-gradient(180deg, #FE5D5D -5.27%, #FFF 6.33%);
 box-shadow: 4px 4px 12px 10px rgba(0, 0, 0, 0.25);
-
 }
 
 .bottom-sheet.open {

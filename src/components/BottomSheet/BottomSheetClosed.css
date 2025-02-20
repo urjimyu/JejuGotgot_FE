@@ -8,14 +8,17 @@
 
 }
 
-.sheet-closed-container span {
+/* .sheet-closed-container span {
   font-size: 17px;
   font-weight: 500;
-  color: #444;
 }
 
 .sheet-closed-container p {
-  font-size: 16px;
-  font-weight: bold;
-  color: #222;
+  font-size: 17px;
+  font-weight: 500;
+} */
+
+.closed-title {
+  font-size: 17px;
+  font-weight: 700;
 }

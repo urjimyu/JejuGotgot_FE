@@ -1,6 +1,8 @@
 .detail-container {
   width: 100%;
-  height: 240px; /* 높이 증가 - 추가 정보 표시를 위해 */
+  height: 183px;
+
+  margin: 0 0 0 -15px;
 }
 
 .swiper-container {
@@ -8,96 +10,84 @@
 }
 
 .slide-img {
+  position: relative;
   object-fit: contain;
-  /* position: relative; */
 }
 
 .img-div {
   height: 162px;
   border-radius: 12px;
   overflow: hidden;
-  /* position: relative; */
+  position: relative;
 }
 
 .slide-img img {
   width: 100%;
   height: 162px;
-  /* display: block; */
+  object-fit: cover;
 }
 
 /* 북마크 버튼 스타일 */
 .bookmark-button {
   position: absolute;
-  top: 0;
-  right: 19px;
+  top: -6.4px;
+  right: 12px;
   border: none;
-  /* border-radius: 50%; */
-  width: 25px;
-  height: 37px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  width: 45px;
+  height: 50px;
   cursor: pointer;
+
   padding: 0;
-  /* background-color: transparent; */
+  background-color: transparent;
+  z-index: 10;
 }
 
-/* 위치 정보 컨테이너 */
-.location-info {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  padding: 0 18px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.bookmark-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  max-height: 37px;
 }
 
-.image-name {
-  background-color: #ECECEC;
-  color: rgb(38, 38, 38);
-  padding: 14px 8px;
-  border-radius: 7px;
-}
-
-.distance {
-  background-color: #ECECEC;
-  color: rgb(38, 38, 38);
-  padding: 14px 8px;
-  border-radius: 7px;
-}
-
+/* 정보 래퍼 스타일 */
 .info-wrapper {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
   display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 5;
 }
 
-.location-info{
+.location-info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 2px;
+}
 
+.location-info {
+  color: white !important;
 }
 
 .distance-info {
-  font-size: 10px;
-  color: white;
+  font-size: 10px !important;
+  color: white !important;
 }
 
-/* 추가 정보 스타일 */
-.additional-info {
-  padding: 10px 18px;
-  background-color: #fff;
+.distance {
+  font-size: 18px !important;
+  font-weight: 500;
+    color: white !important;
 }
 
-.description {
-  font-size: 14px;
-  color: #666;
-  margin: 0 0 4px 0;
-}
-
-.address {
-  font-size: 12px;
-  color: #999;
-  margin: 0;
+.image-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 4px;
+    font-size: 23px !important;
+    color: white !important;
 }

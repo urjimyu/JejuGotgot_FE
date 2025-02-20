@@ -54,21 +54,19 @@ const navigate = useNavigate();
       <div className="search-container">
         <Search placeholder='검색어를 입력하세요'/>
       </div>
-      <div className="overlay-container">
         <div className="top-section">
           <div className="left-info-div">
-          <div className="weather-container">
-            <img src="/assets/rainy.png" alt="비 아이콘"/>
-            <span>2°</span>
-          </div>
-          <img className="map-info" src="/assets/info.png" alt="안내 아이콘"/>
+            <div className="weather-container">
+              <img src="/assets/rainy.png" alt="비 아이콘"/>
+              <span>2°</span>
+            </div>
+            <img className="map-info" src="/assets/info.png" alt="안내 아이콘"/>
           </div>
         </div>
         <div className="icons-container">
           <img className="alert-icon" src="/assets/alert.png" alt="신고 아이콘"/>
           <img className="gps-icon" src="/assets/gps.png" alt="gps 아이콘"/>
         </div>
-      </div>
 
       <div className="bottom-sheet-container">
         <BottomSheet
