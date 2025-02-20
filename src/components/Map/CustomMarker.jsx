@@ -21,17 +21,17 @@ const CustomMapMarker = ({ map, position, radius }) => {
 
     const circles = [
       {
-        radius: radius * 0.7,
+        radius: radius * 0.5,
         fillColor: 'rgb(255, 0, 0)',
         fillOpacity: 0.38
       },
       {
-        radius: radius * 0.5,
+        radius: radius * 0.3,
         fillColor: 'rgb(255, 0, 0)',
         fillOpacity: 0.5
       },
       {
-        radius: radius * 0.3,
+        radius: radius * 0.2,
         fillColor: 'rgb(255, 0, 0)',
         fillOpacity: 0.7
       },

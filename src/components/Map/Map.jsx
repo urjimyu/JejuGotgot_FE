@@ -52,7 +52,7 @@ const Map = () => {
     const container = document.getElementById('map');
     const options = {
       center: new kakaoMaps.LatLng(markerData.lat, markerData.lng),
-      level: 3
+      level: 4
     };
 
     const mapInstance = new kakaoMaps.Map(container, options);
