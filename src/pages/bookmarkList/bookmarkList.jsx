@@ -1,4 +1,5 @@
 import ListBox from '../../components/listBox/ListBox'
+import React from 'react';
 
 // 메인 LocationList 컴포넌트
 const BookmarkList = () => {
@@ -6,26 +7,28 @@ const BookmarkList = () => {
   const [locations, setLocations] = React.useState([]);
   
   // API 호출 예시
-  React.useEffect(() => {
-    const fetchLocations = async () => {
-      try {
-        // API 호출 로직
-        const response = await fetch('your-api-endpoint');
-        const data = await response.json();
-        setLocations(data);
-      } catch (error) {
-        console.error('Failed to fetch locations:', error);
-      }
-    };
+  // React.useEffect(() => {
+  //   const fetchLocations = async () => {
+  //     try {
+  //       // API 호출 로직
+  //       const response = await fetch('your-api-endpoint');
+  //       const data = await response.json();
+  //       setLocations(data);
+  //     } catch (error) {
+  //       console.error('Failed to fetch locations:', error);
+  //     }
+  //   };
     
-    fetchLocations();
-  }, []);
+  //   fetchLocations();
+  // }, []);
 
   return (
     <div className="max-w-2xl mx-auto bg-white">
-      {locations.map((location) => (
+      확인
+      <ListBox/>
+      {/* {locations.map((location) => (
         <ListBox key={location.id} location={location} />
-      ))}
+      ))} */}
     </div>
   );
 };
