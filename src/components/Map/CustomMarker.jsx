@@ -10,14 +10,14 @@ const CustomMapMarker = ({ map, position, radius }) => {
     const markerPosition = new window.kakao.maps.LatLng(position.lat, position.lng);
     
     // 커스텀 마커 이미지
-    const marker = new window.kakao.maps.CustomOverlay({
-      position: markerPosition,
-      content: `
-        <div class="custom-marker">
-          <div class="marker-pin"></div>
-        </div>
-      `
-    });
+    // const marker = new window.kakao.maps.CustomOverlay({
+    //   position: markerPosition,
+    //   content: `
+    //     <div class="custom-marker">
+    //       <div class="marker-pin"></div>
+    //     </div>
+    //   `
+    // });
 
     const circles = [
       {
@@ -55,12 +55,12 @@ const CustomMapMarker = ({ map, position, radius }) => {
     });
 
     // 마커와 원형 오버레이를 지도에 표시
-    marker.setMap(map);
+    // marker.setMap(map);
     circles.forEach(circle => circle.setMap(map));
 
     // 컴포넌트 언마운트 시 마커와 원형 제거
     return () => {
-      marker.setMap(null);
+      // marker.setMap(null);
       circles.forEach(circle => circle.setMap(null));
     };
   }, [map, position, radius]);
