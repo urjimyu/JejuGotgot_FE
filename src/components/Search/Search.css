@@ -1,0 +1,27 @@
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 12px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 0.5rem 1rem;
+}
+
+.search-input {
+  flex: 1;
+  background-color: transparent;
+  outline: none;
+  padding-left: 0.75rem;
+  font-size: 1.125rem;
+}
+
+.clear-button {
+  padding: 0.25rem;
+}
