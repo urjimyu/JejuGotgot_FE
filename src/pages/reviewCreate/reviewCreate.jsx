@@ -10,14 +10,16 @@ export default function ReviewCreate() {
 
   return (
     <div className='review-wrap'>
-      <div>
+      <div className='review-info-wrap'>
         <p className='review-date'>{getFormattedDate()}</p>
         <div className='review-info'>
           <div className='review-store-title'>{placeData.title || '가게 이름 없음'}</div>
         </div>
         <div className='review-store-address'>{placeData.subtitle || '가게 주소 없음'}</div>
       </div>
+      <div className='review-card-wrap'>
       <Card disableBookmark={true} location={placeData} />
+      </div>
     </div>
   );
 }

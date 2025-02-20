@@ -119,3 +119,22 @@
 .swiper-button-disabled {
     opacity: 0.5;
 }
+
+.image-caption {
+    display: inline;
+    color: white;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.char {
+    display: inline-block;
+    background-color: #ECECEC;
+    color: rgb(38, 38, 38);
+    padding: 14px 8px;
+    border-radius: 7px;
+    margin: 0 2px;
+}
