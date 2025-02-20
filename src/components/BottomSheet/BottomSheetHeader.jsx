@@ -16,6 +16,7 @@ const BottomSheetHeader = () => {
         <MapTag text={tag_props.text} backgroundColor={tag_props.backgroundColor} textColor={tag_props.textColor} fontsize={tag_props.fontsize}/>
       </div>
 <span>제주특별자치도 서귀포시 성산읍 성산리 78</span>
+<div className='sheet-line'></div>
     </div>
   )
 }

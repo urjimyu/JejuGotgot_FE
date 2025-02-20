@@ -1,8 +1,8 @@
 .bottom-sheet-header {
   display: flex;
   flex-direction: column;
-  margin-top: 27px;
-  gap: 6px;
+  margin-top: 16px;
+  gap: 10px;
 }
 
 .sheet-title-wrapper {
@@ -19,4 +19,13 @@
 .bottom-sheet-header > span {
   font-size: 14px;
   color: #666;
+}
+
+.sheet-line {
+  height: 2px;
+  width: 326px;
+  margin-top: 13px;
+  margin-bottom: 17px;
+
+  background-color: #E4DDDD;
 }
