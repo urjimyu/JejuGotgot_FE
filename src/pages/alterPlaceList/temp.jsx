@@ -4,6 +4,7 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import './alterPlaceList.css';
+import Tag from '../../components/tag/Tag'
 
 const mockData = [
   {
@@ -60,7 +61,12 @@ const AlterPlaceList = () => {
         </div>
         <div className="location-title">
           {currentLocation.title}
-          <span className="badge">{currentLocation.badge}</span>
+          <span className="badge">
+            <Tag 
+          text={`${currentLocation.badge}`}  // 템플릿 리터럴 필요 없음
+          backgroundColor="#D5E8E5" 
+          textColor="#075E50"/>
+        </span>
         </div>
         <div className="location-address">{currentLocation.address}
       </div>
@@ -76,9 +82,14 @@ const AlterPlaceList = () => {
         >
           {mockData.map((location) => (
             <SwiperSlide key={location.id}>
-              <div className='alterPlaceList_swiper_box'>
+              <div className='alterPlaceList-swiper-box'>
                  <div className="image-author">
-                  {location.author} · {location.authorType}
+                  {location.author} 
+                  <div className='alterPlaceList-who-review'>
+                  <Tag 
+                    text={`${location.authorType}`}  // 템플릿 리터럴 필요 없음
+                    backgroundColor="#FCF1EB" 
+                    textColor="#B23E04"/></div>
                 </div>
               <img src={location.url} alt={location.caption} />
               <div className="image-caption">
