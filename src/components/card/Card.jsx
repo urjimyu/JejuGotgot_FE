@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Tag from '../../components/tag/Tag';
 import './Card.css';
 
-const Card = ({ location = {}, isBookmarked, onBookmarkToggle, disableBookmark, children }) => {
+const Card = ({ location = {}, isBookmarked, onBookmarkToggle, disableBookmark, children,isReviewMode = false }) => {
   const [uploadedImage, setUploadedImage] = useState(() => {
     return localStorage.getItem(`uploadedImage-${location.id}`) || null;
   });
@@ -143,11 +143,12 @@ const Card = ({ location = {}, isBookmarked, onBookmarkToggle, disableBookmark, 
         )}
       </div>
 
-              {showMemo && memo && (
-          <button className="review-upload-btn" onClick={handleReviewUpload}>
-            후기 업로드
-          </button>
-        )}
+            {isReviewMode && showMemo && memo && (
+  <button className="review-upload-btn" onClick={handleReviewUpload}>
+    후기 업로드
+  </button>
+)}
+
     </>
   );
 };

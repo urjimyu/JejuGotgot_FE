@@ -3,8 +3,7 @@
   flex-direction: column;
   margin-top: 16px;
   gap: 10px;
-  background-color: rgba(255, 255, 255, 0.6); /* 반투명 배경 */
-  backdrop-filter: blur(8px); /* 배경 흐림 효과 */
+  background-color: transparent;
 }
 
 
@@ -19,16 +18,14 @@
   font-weight: 1000;
 }
 
-.bottom-sheet-header > span {
+.bottom-sheet-header>span {
   font-size: 14px;
   color: #666;
 }
 
 .sheet-line {
-  height: 2px;
-  width: 326px;
-  margin-top: 13px;
-  margin-bottom: 17px;
+  height: 1.5px;
+  width: 100%;
 
   background-color: #E4DDDD;
 }

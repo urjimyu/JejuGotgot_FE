@@ -15,29 +15,29 @@ const mockData = [
     badge: '여유',
     address: '제주 서귀포시 성산읍 성산리 1',
     url: 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fo1KIw%2Fbtqu9mflPY6%2FrGk1mM3iugV1c6jj9Z3E80%2Fimg.jpg',
-    author: 'cloudL_',
+    author: 'zer0',
     authorType: '주민',
     caption: '산 책 하 기 좋 아 요'
   },
   {
     id: 2,
-    category: '우도',
+    category: '성산일출봉',
     title: '우도봉',
     badge: '인기',
     address: '제주 제주시 우도면 우도봉길 105',
     url: 'https://blog.kakaocdn.net/dn/bCve6g/btqu9mNcrlI/bY83Kk9wakVEJTwknPmsQ1/img.jpg',
-    author: 'jejuLover',
+    author: 'Noaaaaaaa',
     authorType: '주민',
     caption: '전 망 이 멋 져 요'
   },
   {
     id: 3,
-    category: '한라산',
+    category: '성산일출봉',
     title: '백록담',
     badge: '핫플',
     address: '제주 제주시 한라산길 220',
-    url: '/api/placeholder/400/300',
-    author: 'traveler',
+    url: 'https://cdn.newsian.co.kr/news/photo/202208/56264_33487_4742.jpg',
+    author: 'Cloudy_zzang',
     authorType: '여행자',
     caption: '공 기 가 맑 아 요'
   }
@@ -66,52 +66,12 @@ const AlterPlaceList = ({ disableBookmark = false }) => {
       return newBookmarks;
     });
   };
-  //   try {
-  //     // Toggle bookmark state
-  //     setBookmarkedPlaces(prev => {
-  //       const newBookmarks = new Set(prev);
-  //       if (newBookmarks.has(locationId)) {
-  //         newBookmarks.delete(locationId);
-  //       } else {
-  //         newBookmarks.add(locationId);
-  //       }
-  //       return newBookmarks;
-  //     });
-
-  //     // Send to backend
-  //     const response = await fetch('/api/bookmarks', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({
-  //         locationId,
-  //         isBookmarked: !bookmarkedPlaces.has(locationId)
-  //       }),
-  //     });
-
-  //     if (!response.ok) {
-  //       throw new Error('Failed to update bookmark');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error updating bookmark:', error);
-  //     // Revert state on error
-  //     setBookmarkedPlaces(prev => {
-  //       const newBookmarks = new Set(prev);
-  //       if (newBookmarks.has(locationId)) {
-  //         newBookmarks.delete(locationId);
-  //       } else {
-  //         newBookmarks.add(locationId);
-  //       }
-  //       return newBookmarks;
-  //     });
-  //   }
-  // };
 
   const currentLocation = mockData[activeIndex];
 
   return (
-    <div className="detail-container">
+    <div className="alter-detail-container">
+      <div className='back_gray'></div>
       <div className="alterPlaceList-top-detail">
         <div className="location-category">
           <span>{currentLocation.category} 
@@ -129,7 +89,7 @@ const AlterPlaceList = ({ disableBookmark = false }) => {
         </div>
         <div className="location-address">{currentLocation.address}
       </div>
-</div>
+      </div>
       <div className="swiper-container">
         <Swiper
           modules={[Navigation]}
@@ -140,12 +100,13 @@ const AlterPlaceList = ({ disableBookmark = false }) => {
           onSlideChange={handleSlideChange}
         >
           {mockData.map((location) => (
-            <SwiperSlide key={location.id}>
+            <SwiperSlide key={location.id}  className="temp-swiper-slide">
                <Card 
                   location={location} 
                   isBookmarked={bookmarkedPlaces.has(location.id)}
                   onBookmarkToggle={handleBookmarkToggle}
-                  disableBookmark={disableBookmark} // 특정 페이지에서는 true로 전달
+                  disableBookmark={disableBookmark}
+                  isReviewMode={false} // 특정 페이지에서는 true로 전달
                  >
                 <div className="image-caption">
                   {location.caption.split(" ").map((char, index) => 

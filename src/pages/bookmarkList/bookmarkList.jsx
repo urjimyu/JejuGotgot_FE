@@ -22,7 +22,7 @@ const mockLocations = [
     status: '농장',
     type: '예네',
     condition: '조용함',
-    image: 'https://postfiles.pstatic.net/MjAyNTAxMjJfMjk0/MDAxNzM3NTU0MDY3NDc4.jNn9Fj-DztrDaKt-Paua0x1VOvCaJE5mhVvHqIiT2JAg.52P9QUGNlEM7-b56kj-xgo1kGq1C90WXuhVEBObbbXkg.JPEG/900%EF%BC%BF20230102%EF%BC%BF131456.jpg?type=w3840',
+    image: 'https://blog.kakaocdn.net/dn/bCve6g/btqu9mNcrlI/bY83Kk9wakVEJTwknPmsQ1/img.jpg',
     date: '7일 전'
   },
   {
@@ -32,7 +32,7 @@ const mockLocations = [
     status: '용장',
     type: '예네',
     condition: '조용함',
-    image: '/api/placeholder/80/80',
+    image: 'https://cdn.newsian.co.kr/news/photo/202208/56264_33487_4742.jpg',
     date: '7일 전'
   }
 ];

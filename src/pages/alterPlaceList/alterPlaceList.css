@@ -1,30 +1,39 @@
 /* styles.css */
-.detail-container {}
+.alter-detail-container {
+    padding-top: 25px;
+}
 
-/* .header {
-    margin-bottom: 20px;
-} */
+.back_gray {
+    position: fixed;
+    z-index: -1;
+    top: 155px;
+    left: 0px;
+    width: 100%;
+    height: 384px;
+    background-color: #E6E2E2;
+}
+
 
 .alterPlaceList-top-detail {
-    padding-left: 20px;
+    padding-left: 35px;
 }
 
 .location-category {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 14px;
+    font-size: 16px;
     color: black;
 }
 
 .location-category-span {
-    font-size: 12px;
+    font-size: 14px;
     color: #666;
 }
 
 .location-title {
     margin: 10px 0px;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -33,25 +42,30 @@
 
 .badge {
     font-size: 12px;
-    padding: 2px 8px;
     border-radius: 12px;
 }
 
 .location-address {
     color: #666;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 4px;
 }
 
 .swiper-container {
     margin: 0 auto;
-    width: 90%;
-    margin-top: 20px;
+    width: 100%;
+}
+
+.temp-swiper-slide {
+    display: flex;
+    justify-content: center;
+    /* 가로 중앙 정렬 */
+    align-items: center;
+    /* 세로 중앙 정렬 */
 }
 
 
-
-.swiper-slide img:not(.bookmark-image) {
+.temp-swiper-slide img:not(.bookmark-image) {
     width: 288px;
     height: 320px;
     object-fit: cover;
@@ -61,10 +75,10 @@
 .image-caption {
     display: inline;
     color: white;
-    padding: 4px 6px;
+    padding: 3px 5px;
     border-radius: 4px;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 500;
     margin-right: 4px;
 }
 
@@ -84,9 +98,9 @@
 /* 네비게이션 버튼 기본 스타일 덮어쓰기 */
 .swiper-button-next,
 .swiper-button-prev {
-    width: 44px;
-    height: 44px;
-    background-color: rgba(255, 255, 255, 0.9);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -94,16 +108,16 @@
 /* 화살표 아이콘 크기와 색상 수정 */
 .swiper-button-next:after,
 .swiper-button-prev:after {
-    font-size: 18px;
-    color: #333;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 1);
     font-weight: bold;
 }
 
 /* 호버 효과 */
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(221, 221, 221, 0.2);
 }
 
 /* 버튼 위치 조정 */
@@ -120,15 +134,7 @@
     opacity: 0.5;
 }
 
-.image-caption {
-    display: inline;
-    color: white;
-    padding: 4px 6px;
-    border-radius: 4px;
-    font-size: 20px;
-    font-weight: 600;
-    margin-right: 4px;
-}
+
 
 .char {
     display: inline-block;

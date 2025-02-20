@@ -25,7 +25,7 @@ const MOCK_DATA = [
     id: 3,
     category: '한라산',
     title: '백록담',
-    url: '/api/placeholder/400/300',
+    url: 'https://cdn.newsian.co.kr/news/photo/202208/56264_33487_4742.jpg',
     distance: '400m',
   }
 ];

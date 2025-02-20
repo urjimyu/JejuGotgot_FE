@@ -1,5 +1,5 @@
 .header-wrapper {
- position: fixed;
+  position: fixed;
   top: 0;
   display: flex;
   justify-content: flex-start;
@@ -8,6 +8,7 @@
   height: 56px;
   z-index: 888;
   background-color: white;
+  padding-left: 10px;
 }
 
 
