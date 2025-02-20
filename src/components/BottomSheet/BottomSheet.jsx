@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./BottomSheet.css";
 import BottomSheetHeader from "./BottomSheetHeader";
 import BottomSheetClosed from "./BottomSheetClosed";
