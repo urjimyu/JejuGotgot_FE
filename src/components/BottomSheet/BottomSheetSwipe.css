@@ -1,15 +1,6 @@
 .detail-container {
   width: 100%;
-  height: 162px;
-}
-
-.location-title {
-    margin: 10px 0px;
-    font-size: 24px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  height: 240px; /* 높이 증가 - 추가 정보 표시를 위해 */
 }
 
 .swiper-container {
@@ -18,43 +9,95 @@
 
 .slide-img {
   object-fit: contain;
-  position: relative;
-  margin-top: 14px;
+  /* position: relative; */
 }
 
 .img-div {
-    height: 162px;
-    border-radius: 12px;
-    overflow: hidden;
+  height: 162px;
+  border-radius: 12px;
+  overflow: hidden;
+  /* position: relative; */
 }
 
 .slide-img img {
-    width: 100%;
-    height: 162px;
-    /* object-fit: fill; */
-    display: block;
+  width: 100%;
+  height: 162px;
+  /* display: block; */
+}
+
+/* 북마크 버튼 스타일 */
+.bookmark-button {
+  position: absolute;
+  top: 0;
+  right: 19px;
+  border: none;
+  /* border-radius: 50%; */
+  width: 25px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  /* background-color: transparent; */
+}
+
+/* 위치 정보 컨테이너 */
+.location-info {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  padding: 0 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .image-name {
-  position: absolute;
-  left: 18px;
-  bottom: 10px;
-
-    display: inline-block;
-    background-color: #ECECEC;
-    color: rgb(38, 38, 38);
-    padding: 14px 8px;
-    border-radius: 7px;
+  background-color: #ECECEC;
+  color: rgb(38, 38, 38);
+  padding: 14px 8px;
+  border-radius: 7px;
 }
 
 .distance {
-    position: absolute;
-    right: 18px;
-    bottom: 18px;
+  background-color: #ECECEC;
+  color: rgb(38, 38, 38);
+  padding: 14px 8px;
+  border-radius: 7px;
+}
 
-    display: inline-block;
-    background-color: #ECECEC;
-    color: rgb(38, 38, 38);
-    padding: 14px 8px;
-    border-radius: 7px;
+.info-wrapper {
+  display: flex;
+}
+
+.location-info{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+.distance-info {
+  font-size: 10px;
+  color: white;
+}
+
+/* 추가 정보 스타일 */
+.additional-info {
+  padding: 10px 18px;
+  background-color: #fff;
+}
+
+.description {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 4px 0;
+}
+
+.address {
+  font-size: 12px;
+  color: #999;
+  margin: 0;
 }

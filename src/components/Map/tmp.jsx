@@ -2,15 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './Map.css';
 import CustomMarker from './CustomMarker';
 
-const Map = () => {
+const Tmp = () => {
   const [kakaoMaps, setKakaoMaps] = useState(null);
-  const [map, setMap] = useState(null);
-  
-  const markerData = {
-    lat: 33.450701,
-    lng: 126.570667,
-    radius: 500 // meters
-  };
 
   useEffect(() => {
     const KAKAO_MAP_SCRIPT_ID = 'kakao-map-script';
@@ -37,6 +30,13 @@ const Map = () => {
 
     document.head.appendChild(script);
 
+  // 예시 데이터
+  const markerData = {
+    lat: 33.450701,
+    lng: 126.570667,
+    radius: 500 // 미터 단위
+  };
+
     return () => {
       const mapScript = document.getElementById(KAKAO_MAP_SCRIPT_ID);
       if (mapScript) {
@@ -50,24 +50,23 @@ const Map = () => {
 
     const container = document.getElementById('map');
     const options = {
-      center: new kakaoMaps.LatLng(markerData.lat, markerData.lng),
-      level: 4
+      center: new kakaoMaps.LatLng(33.450701, 126.570667),
+      level: 3
     };
 
-    const mapInstance = new kakaoMaps.Map(container, options);
-    setMap(mapInstance);
+    const map = new kakaoMaps.Map(container, options);
 
-    // Create marker
-    const markerPosition = new kakaoMaps.LatLng(markerData.lat, markerData.lng);
+    // 마커 생성
+    const markerPosition = new kakaoMaps.LatLng(33.450701, 126.570667);
     const marker = new kakaoMaps.Marker({
       position: markerPosition
     });
-    marker.setMap(mapInstance);
+    marker.setMap(map);
 
   }, [kakaoMaps]);
 
   return (
-    <div className="map-container">
+  <div className="map-container">
       <div id="map" className="map"></div>
       {map && (
         <CustomMarker
@@ -80,4 +79,4 @@ const Map = () => {
   );
 };
 
-export default Map;
+export default Tmp;
