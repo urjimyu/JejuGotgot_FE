@@ -5,6 +5,7 @@ import MapPage from "./pages/Map/MapPage";
 import BookmarkList from "./pages/bookmarkList/bookmarkList";
 import AlterPlaceList from "./pages/alterPlaceList/temp";
 import ChatPage from "./pages/chat/ChatPage";
+import ReviewCreate from "./pages/reviewCreate/reviewCreate";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,10 @@ const router = createBrowserRouter([
       },
             {
         path: "chat",
-        element: <ChatPage />,
+        element: <ChatPage />},
+       {
+        path: "reviewCreate",
+        element: <ReviewCreate />,
       },
     ],
   },

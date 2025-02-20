@@ -1,5 +1,6 @@
 .tag {
     font-size: 12px;
-    padding: 3px 9px;
+    padding: 2px 5px;
+    box-sizing: content-box;
     border-radius: 12px;
 }
