@@ -1,6 +1,7 @@
 /* 바텀시트 기본 스타일 */
 .bottom-sheet {
   margin: 0 auto;
+  padding-left: 20px 0 0 24px;
   position: absolute;
   bottom: -391px;
   left: 0;
