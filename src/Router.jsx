@@ -4,6 +4,7 @@ import App from "./App";
 import MapPage from "./pages/Map/MapPage";
 import BookmarkList from "./pages/bookmarkList/bookmarkList";
 import AlterPlaceList from "./pages/alterPlaceList/temp";
+import ReviewCreate from "./pages/reviewCreate/reviewCreate";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "alterPlaceList",
         element: <AlterPlaceList />,
+      },
+       {
+        path: "reviewCreate",
+        element: <ReviewCreate />,
       },
     ],
   },

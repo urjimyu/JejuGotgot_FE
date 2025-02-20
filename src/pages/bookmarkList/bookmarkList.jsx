@@ -1,6 +1,7 @@
-import ListBox from '../../components/listBox/ListBox'
+import { useNavigate } from 'react-router-dom'; // 🔹 useNavigate 추가
+import ListBox from '../../components/listBox/ListBox';
 import React from 'react';
-import './bookmarkList.css'
+import './bookmarkList.css';
 
 const mockLocations = [
   {
@@ -35,9 +36,14 @@ const mockLocations = [
   }
 ];
 
-// 메인 LocationList 컴포넌트
 const BookmarkList = () => {
- return (
+  const navigate = useNavigate(); // 🔹 네비게이션 함수 사용
+
+  const handleReviewClick = (location) => {
+    navigate('/reviewCreate', { state: { location } }); // 🔹 해당 장소 데이터를 가지고 이동
+  };
+
+  return (
     <div className="bookmark-list-wrap">
       {mockLocations.map((location) => (
         <ListBox
@@ -50,7 +56,7 @@ const BookmarkList = () => {
           condition={location.condition}
           date={location.date}
           actionButton={
-            <button className="bookmark-btn">
+            <button className="bookmark-btn" onClick={() => handleReviewClick(location)}>
               후기작성
             </button>
           }
