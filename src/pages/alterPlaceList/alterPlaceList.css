@@ -1,7 +1,5 @@
 /* styles.css */
-.detail-container {
-    background: white;
-}
+.detail-container {}
 
 /* .header {
     margin-bottom: 20px;
@@ -47,33 +45,13 @@
 
 .swiper-container {
     margin: 0 auto;
-    width: 96%;
+    width: 90%;
     margin-top: 20px;
 }
 
-.alterPlaceList-swiper-box {
-    margin: 20px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    height: 440px;
-}
 
-.alterPlaceList-who-review {
-    padding-left: 5px;
-}
 
-.image-author {
-    width: 90%;
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: -10px;
-}
-
-.swiper-slide img {
+.swiper-slide img:not(.bookmark-image) {
     width: 288px;
     height: 320px;
     object-fit: cover;
