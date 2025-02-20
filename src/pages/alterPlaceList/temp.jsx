@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import './alterPlaceList.css';
 import Tag from '../../components/tag/Tag'
+import Card from '../../components/card/Card';
 
 const mockData = [
   {
@@ -42,7 +43,7 @@ const mockData = [
   }
 ];
 
-const AlterPlaceList = () => {
+const AlterPlaceList = ({ disableBookmark = false }) => {
   const [activeIndex, setActiveIndex] = useState(0);
     const [bookmarkedPlaces, setBookmarkedPlaces] = useState(new Set());
 
@@ -52,6 +53,9 @@ const AlterPlaceList = () => {
 
 
   const handleBookmarkToggle = (locationId) => {
+    if (disableBookmark) return; 
+
+
     setBookmarkedPlaces(prev => {
       const newBookmarks = new Set(prev);
       if (newBookmarks.has(locationId)) {
@@ -62,8 +66,6 @@ const AlterPlaceList = () => {
       return newBookmarks;
     });
   };
-
-  // const handleBookmarkToggle = async (locationId) => {
   //   try {
   //     // Toggle bookmark state
   //     setBookmarkedPlaces(prev => {
@@ -139,46 +141,22 @@ const AlterPlaceList = () => {
         >
           {mockData.map((location) => (
             <SwiperSlide key={location.id}>
-              <div className='alterPlaceList-swiper-box'>
-               <div className="bookmark-wrapper">
-                  <img 
-                    src={bookmarkedPlaces.has(location.id) ? "/imgs/active-bookmark.png" : "/imgs/inactive-bookmark.png"}
-                    alt="북마크"
-                    className="bookmark-image"
-                    onClick={() => handleBookmarkToggle(location.id)}
-                  />
-                </div>
-                  {/* <button
-                        className="bookmark-toggle"
-                        onClick={() => handleBookmarkToggle(location.id)}
-                        aria-label="북마크 토글"
-                      >
-                        <img 
-                          src={bookmarkedPlaces.has(location.id) ? "/imgs/active-bookmark.png" : "/imgs/inactive-bookmark.png"}
-                          alt="북마크"
-                          className="bookmark-image"
-                        />
-                      </button> */}
-                 <div className="image-author">
-                  {location.author} 
-                  <div>
-                  <Tag 
-                    className='alterPlaceList-who-review'
-                    text={`${location.authorType}`}  // 템플릿 리터럴 필요 없음
-                    backgroundColor="#FCF1EB" 
-                    textColor="#B23E04"/></div>
-                </div>
-              <img src={location.url} alt={location.caption} />
-              <div className="image-caption">
-                  {location.caption.split("").map((char, index) => 
+               <Card 
+                  location={location} 
+                  isBookmarked={bookmarkedPlaces.has(location.id)}
+                  onBookmarkToggle={handleBookmarkToggle}
+                  disableBookmark={disableBookmark} // 특정 페이지에서는 true로 전달
+                 >
+                <div className="image-caption">
+                  {location.caption.split(" ").map((char, index) => 
                     char === " " ? (
-                      <span key={index}>&nbsp;</span> // 공백은 스타일 없이 처리
+                      <span key={index}>&nbsp;</span>
                     ) : (
-                      <span key={index} className="char">{char}</span> // 문자만 스타일 적용
+                      <span key={index} className="char">{char}</span>
                     )
                   )}
                 </div>
-              </div>
+              </Card>
             </SwiperSlide>
           ))}
         </Swiper>
