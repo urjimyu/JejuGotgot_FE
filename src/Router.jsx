@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import BookmarkList from "./pages/bookmarkList/bookmarkList";
+import AlterPlaceList from "./pages/alterPlaceList/alterPlacelIST";
 import App from "./App";
 
 const router = createBrowserRouter([
@@ -10,7 +11,10 @@ const router = createBrowserRouter([
       {
         path: "bookmarkList",
         element: <BookmarkList />,
-      }, 
+      },  {
+        path: "alterPlaceList",
+        element: <AlterPlaceList />,
+      },
     ],
   },
 ]);
