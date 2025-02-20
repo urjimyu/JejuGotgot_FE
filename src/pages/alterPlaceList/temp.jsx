@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import './alterPlaceList.css';
 import Tag from '../../components/tag/Tag'
+import Card from '../../components/card/Card';
 
 const mockData = [
   {
@@ -42,12 +43,70 @@ const mockData = [
   }
 ];
 
-const AlterPlaceList = () => {
+const AlterPlaceList = ({ disableBookmark = false }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+    const [bookmarkedPlaces, setBookmarkedPlaces] = useState(new Set());
 
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.realIndex); // realIndex를 사용하여 무한 루프에서도 올바른 인덱스 추적
   };
+
+
+  const handleBookmarkToggle = (locationId) => {
+    if (disableBookmark) return; 
+
+
+    setBookmarkedPlaces(prev => {
+      const newBookmarks = new Set(prev);
+      if (newBookmarks.has(locationId)) {
+        newBookmarks.delete(locationId);
+      } else {
+        newBookmarks.add(locationId);
+      }
+      return newBookmarks;
+    });
+  };
+  //   try {
+  //     // Toggle bookmark state
+  //     setBookmarkedPlaces(prev => {
+  //       const newBookmarks = new Set(prev);
+  //       if (newBookmarks.has(locationId)) {
+  //         newBookmarks.delete(locationId);
+  //       } else {
+  //         newBookmarks.add(locationId);
+  //       }
+  //       return newBookmarks;
+  //     });
+
+  //     // Send to backend
+  //     const response = await fetch('/api/bookmarks', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         locationId,
+  //         isBookmarked: !bookmarkedPlaces.has(locationId)
+  //       }),
+  //     });
+
+  //     if (!response.ok) {
+  //       throw new Error('Failed to update bookmark');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error updating bookmark:', error);
+  //     // Revert state on error
+  //     setBookmarkedPlaces(prev => {
+  //       const newBookmarks = new Set(prev);
+  //       if (newBookmarks.has(locationId)) {
+  //         newBookmarks.delete(locationId);
+  //       } else {
+  //         newBookmarks.add(locationId);
+  //       }
+  //       return newBookmarks;
+  //     });
+  //   }
+  // };
 
   const currentLocation = mockData[activeIndex];
 
@@ -82,26 +141,22 @@ const AlterPlaceList = () => {
         >
           {mockData.map((location) => (
             <SwiperSlide key={location.id}>
-              <div className='alterPlaceList-swiper-box'>
-                 <div className="image-author">
-                  {location.author} 
-                  <div className='alterPlaceList-who-review'>
-                  <Tag 
-                    text={`${location.authorType}`}  // 템플릿 리터럴 필요 없음
-                    backgroundColor="#FCF1EB" 
-                    textColor="#B23E04"/></div>
-                </div>
-              <img src={location.url} alt={location.caption} />
-              <div className="image-caption">
-                  {location.caption.split("").map((char, index) => 
+               <Card 
+                  location={location} 
+                  isBookmarked={bookmarkedPlaces.has(location.id)}
+                  onBookmarkToggle={handleBookmarkToggle}
+                  disableBookmark={disableBookmark} // 특정 페이지에서는 true로 전달
+                 >
+                <div className="image-caption">
+                  {location.caption.split(" ").map((char, index) => 
                     char === " " ? (
-                      <span key={index}>&nbsp;</span> // 공백은 스타일 없이 처리
+                      <span key={index}>&nbsp;</span>
                     ) : (
-                      <span key={index} className="char">{char}</span> // 문자만 스타일 적용
+                      <span key={index} className="char">{char}</span>
                     )
                   )}
                 </div>
-              </div>
+              </Card>
             </SwiperSlide>
           ))}
         </Swiper>
