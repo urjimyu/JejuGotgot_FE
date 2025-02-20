@@ -11,6 +11,9 @@
     "format": "prettier --write \"**/*.{js,jsx,md}\""
   },
   "dependencies": {
+    "@goorm-dev/vapor-core": "^0.25.1",
+    "@goorm-dev/vapor-hooks": "^0.25.1",
+    "@goorm-dev/vapor-icons": "^0.25.1",
     "@tailwindcss/vite": "^4.0.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
