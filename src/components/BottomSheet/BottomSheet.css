@@ -1,0 +1,28 @@
+/* 바텀시트 기본 스타일 */
+.bottom-sheet {
+  margin: 0 auto;
+  position: absolute;
+  bottom: -391px;
+  left: 0;
+  right: 0;
+
+  width: 375px;
+  height: 680px;  
+  background-color: white;
+  border-radius: 20px 20px 0 0;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* 바텀시트가 열렸을 때 */
+.bottom-sheet.open {
+  transform: translateY(-391px);
+  /* height: 680px; 스와이프 후 최대로 올라온 위치 */
+}
+
+/* 내용 스타일 */
+.content {
+  padding: 16px;
+  height: 100%;
+  overflow-y: auto;
+}

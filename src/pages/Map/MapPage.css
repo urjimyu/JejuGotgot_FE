@@ -1,74 +1,37 @@
-.map-container {
+.page-container {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
+
+  overflow: hidden;
 }
 
-.map {
-  width: 100%;
-  height: 100%;
-}
-
-.search-overlay {
-  position: fixed;
-  top: 16px;
-  left: 16px;
-  right: 16px;
-}
-
-.search-box {
-  background-color: white;
-  border-radius: 9999px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  display: flex;
-  align-items: center;
-}
-
-.search-icon {
-  width: 24px;
-  height: 24px;
-  color: #9CA3AF;
-}
-
-.search-input {
-  margin-left: 8px;
-  width: 100%;
-  outline: none;
-  border: none;
-}
-
-.close-button {
-  margin-left: 8px;
-  cursor: pointer;
-}
-
-.custom-marker {
-  background-color: #EF4444;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 9999px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.info-card {
+.map-container {
   position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+   z-index: 0; 
+}
+
+.search-container {
+ position: absolute;
+ top: 16px;
+ left: 16px;
+
+  /* width: 343px; */
+  /* height: 50px; */
+  
+  z-index: 10;
+
+}
+
+.bottom-sheet-container {
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: white;
-  border-radius: 8px 8px 0 0;
-  padding: 16px;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.info-title {
-  font-size: 1.125rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-.info-description {
-  margin-top: 8px;
-  color: #4B5563;
+  z-index: 10;
 }

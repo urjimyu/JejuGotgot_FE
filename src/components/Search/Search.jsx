@@ -10,7 +10,6 @@ const Search = ({ placeholder , onSearch }) => {
   return (
     <div className="search-container">
       <div className="search-box">
-        {/* 돋보기 아이콘 */}
         <input
           type="text"
           className="search-input"
@@ -27,5 +26,6 @@ const Search = ({ placeholder , onSearch }) => {
       </div>
     </div>
   );
+};
 
 export default Search;
