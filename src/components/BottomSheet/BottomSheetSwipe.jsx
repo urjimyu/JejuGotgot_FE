@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Navigation } from 'swiper/modules';
@@ -30,6 +31,20 @@ const MOCK_DATA = [
 ];
 
 const BottomSheetSwipe = () => {
+  const [bookmarks, setBookmarks] = useState(
+    MOCK_DATA.reduce((acc, location) => ({
+      ...acc,
+      [location.id]: false
+    }), {})
+  );
+
+  const toggleBookmark = (id) => {
+    setBookmarks(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
+
   return (
 <div className="detail-container">
       <div className="swiper-container">
@@ -43,12 +58,30 @@ const BottomSheetSwipe = () => {
           {MOCK_DATA.map((location) => (
             <SwiperSlide key={location.id} className='slide-img'>
               <div className='img-div'>
-              <img src={location.url} alt={location.title} />
+                <img src={location.url} alt={location.title} />
+                <button 
+                  className="bookmark-button"
+                  onClick={() => toggleBookmark(location.id)}
+                  aria-label={bookmarks[location.id] ? "북마크 제거" : "북마크 추가"}
+                >
+                  {bookmarks[location.id] ? (
+                    <img src="/assets/save.png" alt="저장 상태 아이콘" className="bookmark-icon filled" />
+                  ) : (
+                    <img src="/assets/unsave.png" alt="미저장 상태 아이콘" className="bookmark-icon" />
+                  )}
+                </button>
               </div>
-                  <span className="image-name" key={location.id}>{location.title}</span>
-              <div className="image-distance">
-                  <span key={location.id} className="distance">{location.distance}</span>
+              <div className="info-wrapper">
+                <div className="location-info">
+                <span className="distance-info">현재 거리로부터</span>
+                <span className="distance">{location.distance}</span>
                 </div>
+                <span className="image-name">{location.title}</span>
+              </div>
+              <div className="additional-info">
+                <p className="description">{location.description}</p>
+                <p className="address">{location.address}</p>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

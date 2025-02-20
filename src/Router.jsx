@@ -4,6 +4,7 @@ import App from "./App";
 import MapPage from "./pages/Map/MapPage";
 import BookmarkList from "./pages/bookmarkList/bookmarkList";
 import AlterPlaceList from "./pages/alterPlaceList/temp";
+import ChatPage from "./pages/chat/ChatPage";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "alterPlaceList",
         element: <AlterPlaceList />,
+      },
+            {
+        path: "chat",
+        element: <ChatPage />,
       },
     ],
   },
