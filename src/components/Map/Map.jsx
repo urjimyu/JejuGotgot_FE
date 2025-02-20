@@ -6,7 +6,6 @@ const Map = () => {
   const [kakaoMaps, setKakaoMaps] = useState(null);
   const [map, setMap] = useState(null);
   
-  // Example data
   const markerData = {
     lat: 33.450701,
     lng: 126.570667,

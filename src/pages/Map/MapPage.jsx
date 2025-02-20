@@ -1,11 +1,49 @@
-import React from 'react';
+import {React, useState, useEffect} from 'react';
 import './MapPage.css';
 import Map from '../../components/Map/Map';
 import Search from '../../components/Search/Search';
 import BottomSheet from '../../components/BottomSheet/BottomSheet';
 
 const MapPage = () => {
- 
+  const [currentPosition, setCurrentPosition] = useState(null);
+
+    const defaultPosition = {
+    lat: 33.450701,
+    lng: 126.570667,
+    radius: 500 // meters
+  };
+
+  // 위치 정보를 가져오는 함수
+  const getCurrentLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const newPosition = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+            radius: defaultPosition.radius
+          };
+          setCurrentPosition(newPosition);
+          console.log("현재 경도:", newPosition.lat);
+          console.log("현재 위도:", newPosition.lng);
+        },
+        (error) => {
+          console.error('Error getting current location:', error);
+          setCurrentPosition(defaultPosition);
+        }
+      );
+    } else {
+      console.error('Geolocation is not supported by this browser.');
+      setCurrentPosition(defaultPosition);
+    }
+  };
+
+  useEffect(() => {
+    // 컴포넌트 마운트 시 한 번만 위치 정보 가져오기
+    getCurrentLocation();
+  }, []);
+  
+
   return (
     <div className="page-container">
       <div className='map-container'>
