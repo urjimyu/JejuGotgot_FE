@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import "./BottomSheet.css"; // CSS 파일을 임포트하세요.
+import "./BottomSheet.css";
+import BottomSheetHeader from "./BottomSheetHeader";
+import BottomSheetClosed from "./BottomSheetClosed";
+import BottomSheetOpened from "./BottomSheetOpened";
 
 const BottomSheet = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,16 +33,11 @@ const BottomSheet = () => {
       onTouchEnd={handleTouchEnd}
     >
       <div className="content">
+        <BottomSheetHeader/>
         {isOpen ? (
-          <div>
-            <h2>상단 내용</h2>
-            <p>최대 높이로 스와이프 시 내용이 달라집니다.</p>
-          </div>
+          <BottomSheetOpened/>
         ) : (
-          <div>
-            <h2>하단 내용</h2>
-            <p>초기 상태의 내용이 표시됩니다.</p>
-          </div>
+          <BottomSheetClosed/>
         )}
       </div>
     </div>
