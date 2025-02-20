@@ -10,6 +10,7 @@ const Search = ({ placeholder , onSearch }) => {
   return (
     <div className="search-container">
       <div className="search-box">
+        <img src="/assets/search.png" alt="검색 아이콘" className="search-icon" />
         <input
           type="text"
           className="search-input"
@@ -20,7 +21,7 @@ const Search = ({ placeholder , onSearch }) => {
         />
         {input && (
           <button onClick={handleClear} className="clear-button">
-            {/* X 아이콘 */}
+        <img src="/assets/delete.png" alt="삭제 아이콘" className="delete-icon" />
           </button>
         )}
       </div>
