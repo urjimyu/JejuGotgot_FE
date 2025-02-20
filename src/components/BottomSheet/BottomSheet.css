@@ -1,0 +1,29 @@
+.bottom-sheet {
+  margin: 0 auto;
+  padding-left: 20px 0 0 24px;
+  position: absolute;
+  bottom: -391px;
+  left: 0;
+  right: 0;
+
+  width: 375px;
+  height: 680px;  
+  background-color: white;
+  border-radius: 20px 20px 0 0;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  
+background: linear-gradient(180deg, #FE5D5D -5.27%, #FFF 6.33%);
+box-shadow: 4px 4px 12px 10px rgba(0, 0, 0, 0.25);
+
+}
+
+.bottom-sheet.open {
+  transform: translateY(-391px);
+}
+
+.content {
+  padding: 16px;
+  height: 100%;
+  overflow-y: auto;
+}

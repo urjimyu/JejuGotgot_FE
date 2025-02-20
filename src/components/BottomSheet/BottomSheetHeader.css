@@ -1,0 +1,22 @@
+.bottom-sheet-header {
+  display: flex;
+  flex-direction: column;
+  margin-top: 27px;
+  gap: 6px;
+}
+
+.sheet-title-wrapper {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 8px;
+}
+
+.sheet-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.bottom-sheet-header > span {
+  font-size: 14px;
+  color: #666;
+}

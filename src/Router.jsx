@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
+// import BookmarkList from "../pages/bookmarkList/bookmarkList";
+import App from "./App";
+import MapPage from "./pages/Map/MapPage";
 import BookmarkList from "./pages/bookmarkList/bookmarkList";
 import AlterPlaceList from "./pages/alterPlaceList/temp";
-import App from "./App";
 
 const router = createBrowserRouter([
   {
@@ -9,9 +11,14 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
+        path: "map",
+        element: <MapPage />,
+      }, 
+      {
         path: "bookmarkList",
         element: <BookmarkList />,
-      },  {
+      },
+      {
         path: "alterPlaceList",
         element: <AlterPlaceList />,
       },
