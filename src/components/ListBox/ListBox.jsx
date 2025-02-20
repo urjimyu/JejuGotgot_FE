@@ -1,29 +1,41 @@
 import React from 'react';
+import './ListBox.css'; // CSS 파일 임포트
 
-const ListBox = () => {
+const ListBox = ({ 
+  image, 
+  title, 
+  subtitle, 
+  status, 
+  type, 
+  condition, 
+  date, 
+  actionButton 
+}) => {
   return (
-    <div className="flex items-center p-4 border-b">
-      {/* <img 
-        src={location.imageUrl} 
-        alt={location.title}
-        className="w-20 h-20 rounded-lg object-cover"
-      /> */}
-      <div className="ml-4 flex-1">
-        <div className="flex justify-between items-start">
+    <div className="list-box">
+      <img 
+        src={image} 
+        alt={title}
+        className="list-box-image"
+      />
+      <div className="list-box-content">
+        <div className="list-box-header">
           <div>
-            <h3 className="font-medium text-lg">타이틀</h3>
-            <p className="text-sm text-gray-600">서브타이틀</p>
-            <div className="flex gap-2 mt-1">
-              <span className="text-sm text-gray-500">상태</span>
-              <span className="text-sm text-gray-500"></span>
-              <span className="text-sm text-gray-500"></span>
+            <h3 className="list-box-title">{title}</h3>
+            <p className="list-box-subtitle">{subtitle}</p>
+            <div className="list-box-tags">
+              <span>{status}</span>
+              <span>{type}</span>
+              <span>{condition}</span>
             </div>
           </div>
-          <span className="text-sm text-gray-500"></span>
+          <span className="list-box-date">{date}</span>
         </div>
-        <button className="mt-2 px-4 py-1 bg-gray-100 rounded-md text-sm">
-          후기작성
-        </button>
+        {actionButton && (
+          <div className="list-box-action">
+            {actionButton}
+          </div>
+        )}
       </div>
     </div>
   );
