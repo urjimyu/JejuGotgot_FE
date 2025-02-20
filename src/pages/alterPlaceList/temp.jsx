@@ -44,10 +44,67 @@ const mockData = [
 
 const AlterPlaceList = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+    const [bookmarkedPlaces, setBookmarkedPlaces] = useState(new Set());
 
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.realIndex); // realIndex를 사용하여 무한 루프에서도 올바른 인덱스 추적
   };
+
+
+  const handleBookmarkToggle = (locationId) => {
+    setBookmarkedPlaces(prev => {
+      const newBookmarks = new Set(prev);
+      if (newBookmarks.has(locationId)) {
+        newBookmarks.delete(locationId);
+      } else {
+        newBookmarks.add(locationId);
+      }
+      return newBookmarks;
+    });
+  };
+
+  // const handleBookmarkToggle = async (locationId) => {
+  //   try {
+  //     // Toggle bookmark state
+  //     setBookmarkedPlaces(prev => {
+  //       const newBookmarks = new Set(prev);
+  //       if (newBookmarks.has(locationId)) {
+  //         newBookmarks.delete(locationId);
+  //       } else {
+  //         newBookmarks.add(locationId);
+  //       }
+  //       return newBookmarks;
+  //     });
+
+  //     // Send to backend
+  //     const response = await fetch('/api/bookmarks', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         locationId,
+  //         isBookmarked: !bookmarkedPlaces.has(locationId)
+  //       }),
+  //     });
+
+  //     if (!response.ok) {
+  //       throw new Error('Failed to update bookmark');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error updating bookmark:', error);
+  //     // Revert state on error
+  //     setBookmarkedPlaces(prev => {
+  //       const newBookmarks = new Set(prev);
+  //       if (newBookmarks.has(locationId)) {
+  //         newBookmarks.delete(locationId);
+  //       } else {
+  //         newBookmarks.add(locationId);
+  //       }
+  //       return newBookmarks;
+  //     });
+  //   }
+  // };
 
   const currentLocation = mockData[activeIndex];
 
@@ -83,10 +140,30 @@ const AlterPlaceList = () => {
           {mockData.map((location) => (
             <SwiperSlide key={location.id}>
               <div className='alterPlaceList-swiper-box'>
+               <div className="bookmark-wrapper">
+                  <img 
+                    src={bookmarkedPlaces.has(location.id) ? "/imgs/active-bookmark.png" : "/imgs/inactive-bookmark.png"}
+                    alt="북마크"
+                    className="bookmark-image"
+                    onClick={() => handleBookmarkToggle(location.id)}
+                  />
+                </div>
+                  {/* <button
+                        className="bookmark-toggle"
+                        onClick={() => handleBookmarkToggle(location.id)}
+                        aria-label="북마크 토글"
+                      >
+                        <img 
+                          src={bookmarkedPlaces.has(location.id) ? "/imgs/active-bookmark.png" : "/imgs/inactive-bookmark.png"}
+                          alt="북마크"
+                          className="bookmark-image"
+                        />
+                      </button> */}
                  <div className="image-author">
                   {location.author} 
-                  <div className='alterPlaceList-who-review'>
+                  <div>
                   <Tag 
+                    className='alterPlaceList-who-review'
                     text={`${location.authorType}`}  // 템플릿 리터럴 필요 없음
                     backgroundColor="#FCF1EB" 
                     textColor="#B23E04"/></div>
