@@ -1,0 +1,10 @@
+.bookmark-list-wrap {}
+
+.bookmark-btn {
+    color: white;
+    border-radius: 8px;
+    background-color: #525252;
+    width: 80px;
+    height: 32px;
+    font-size: 14px;
+}
