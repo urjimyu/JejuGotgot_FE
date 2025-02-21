@@ -68,7 +68,7 @@
 
 .search-container {
   position: absolute;
-  top: 16px;
+  top: 10px;
   justify-self: center;
 
   z-index: 10;
