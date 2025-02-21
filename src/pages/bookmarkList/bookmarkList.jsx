@@ -7,30 +7,30 @@ import Header from '../../components/common/Header';
 const mockLocations = [
   {
     id: 1,
-    title: '큰 넓게',
-    subtitle: '제주특별자치도 서귀포시',
+    title: '백록담',
+    subtitle: '제주 제주시 한라산길',
     status: '용장',
-    type: '예네',
-    condition: '조용함',
-    image: 'https://blog.kakaocdn.net/dn/o1KIw/btqu9mflPY6/rGk1mM3iugV1c6jj9Z3E80/img.jpg',
-    date: '7일 전'
+    type: '자연',
+    condition: '핫플',
+    image: 'https://cdn.newsian.co.kr/news/photo/202208/56264_33487_4742.jpg',
+    date: '오늘'
   },
   {
     id: 2,
     title: '신선 목장',
     subtitle: '제주특별자치도 서귀포시',
     status: '농장',
-    type: '예네',
-    condition: '조용함',
+    type: '자연',
+    condition: '한적함',
     image: 'https://blog.kakaocdn.net/dn/bCve6g/btqu9mNcrlI/bY83Kk9wakVEJTwknPmsQ1/img.jpg',
-    date: '7일 전'
+    date: '23일 전'
   },
   {
     id: 3,
     title: '큰 넓게',
     subtitle: '제주특별자치도 서귀포시',
     status: '용장',
-    type: '예네',
+    type: '자연',
     condition: '조용함',
     image: 'https://cdn.newsian.co.kr/news/photo/202208/56264_33487_4742.jpg',
     date: '7일 전'
