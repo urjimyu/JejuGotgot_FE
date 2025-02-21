@@ -5,8 +5,8 @@ import MapTag from '../tag/MapTag';
 const BottomSheetHeader = () => {
   const tag_props = {
   text: '혼잡', 
-  backgroundColor : '#FFD700',
-  textColor : '#000000',
+  backgroundColor : '#FF383D',
+  textColor : '#FFFFFF',
   };
 
   return (

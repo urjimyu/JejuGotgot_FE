@@ -22,7 +22,7 @@
 .icons-container {
   position: absolute;
   right: 24px;
-  bottom: 360px;
+  bottom: 330px;
   display: flex;
   z-index: 15;
   gap: 9px;

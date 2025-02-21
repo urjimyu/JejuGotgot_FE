@@ -90,6 +90,7 @@ console.log("PLACE", placeData);
           <BottomSheet
             title={placeData.name}
             description={placeData.description}
+            placeData={placeData}
           />
         ) : (
           <BottomSheet
