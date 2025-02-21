@@ -6,19 +6,21 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import './BottomSheetSwipe.css';
 
+import { useNavigate } from 'react-router-dom'; 
+
 const MOCK_DATA = [
   {
     id: 1,
     category: '성산일출봉',
     title: '지미봉',
-    url: 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fo1KIw%2Fbtqu9mflPY6%2FrGk1mM3iugV1c6jj9Z3E80%2Fimg.jpg',
+    url: 'https://mblogthumb-phinf.pstatic.net/MjAyNDA0MTRfMTcg/MDAxNzEzMTA0MjA3Mzc1.2fHG_NDnJVVfOcHjWjqQ5NhUGyoaNALqsL0Khwbxw3og.gz5lRYzyhCUHySjaV3pU9BL-BTmngK8mSVNBVbTyeNgg.JPEG/SE-d78cb0bc-89f5-45da-893a-c347838c402c.jpg?type=w800',
     distance: '500m',
   },
   {
     id: 2,
     category: '우도',
     title: '우도봉',
-    url: 'https://blog.kakaocdn.net/dn/bCve6g/btqu9mNcrlI/bY83Kk9wakVEJTwknPmsQ1/img.jpg',
+    url: 'https://api.cdn.visitjeju.net/photomng/imgpath/202112/08/6afd1026-cf48-4208-97f5-f822a73e8b76.JPG',
     distance: '700m',
   },
   {
@@ -31,6 +33,7 @@ const MOCK_DATA = [
 ];
 
 const BottomSheetSwipe = () => {
+  const navigate = useNavigate();
   const [bookmarks, setBookmarks] = useState(
     MOCK_DATA.reduce((acc, location) => ({
       ...acc,
@@ -58,10 +61,15 @@ const BottomSheetSwipe = () => {
           {MOCK_DATA.map((location) => (
             <SwiperSlide key={location.id} className='slide-img'>
               <div className='img-div'>
-                <img src={location.url} alt={location.title} />
+                <img src={location.url} alt={location.title} 
+                onClick={() => navigate('/alterPlaceList')} />
                 <button 
                   className="bookmark-button"
-                  onClick={() => toggleBookmark(location.id)}
+                   onClick={(e) => {
+                    e.stopPropagation(); // 부모의 클릭 이벤트 방지
+                    toggleBookmark(location.id);
+                  }}
+                  
                 >
                   {bookmarks[location.id] ? (
                     <img src="/assets/save.png" alt="저장 상태 아이콘" className="bookmark-icon filled" />

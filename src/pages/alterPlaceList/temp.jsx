@@ -14,7 +14,7 @@ const mockData = [
     title: '지미봉',
     badge: '여유',
     address: '제주 서귀포시 성산읍 성산리 1',
-    url: 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fo1KIw%2Fbtqu9mflPY6%2FrGk1mM3iugV1c6jj9Z3E80%2Fimg.jpg',
+    url: 'https://mblogthumb-phinf.pstatic.net/MjAyNDA0MTRfMTcg/MDAxNzEzMTA0MjA3Mzc1.2fHG_NDnJVVfOcHjWjqQ5NhUGyoaNALqsL0Khwbxw3og.gz5lRYzyhCUHySjaV3pU9BL-BTmngK8mSVNBVbTyeNgg.JPEG/SE-d78cb0bc-89f5-45da-893a-c347838c402c.jpg?type=w800',
     author: 'zer0',
     authorType: '주민',
     caption: '산 책 하 기 좋 아 요'
@@ -25,7 +25,7 @@ const mockData = [
     title: '우도봉',
     badge: '인기',
     address: '제주 제주시 우도면 우도봉길 105',
-    url: 'https://blog.kakaocdn.net/dn/bCve6g/btqu9mNcrlI/bY83Kk9wakVEJTwknPmsQ1/img.jpg',
+    url: 'https://api.cdn.visitjeju.net/photomng/imgpath/202112/08/6afd1026-cf48-4208-97f5-f822a73e8b76.JPG',
     author: 'Noaaaaaaa',
     authorType: '주민',
     caption: '전 망 이 멋 져 요'
